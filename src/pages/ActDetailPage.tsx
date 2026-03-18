@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ChevronRight, Copy, Check, BookOpen, Menu, X, Sparkles } from "lucide-react";
 import { useAct } from "../hooks/useActs";
@@ -198,7 +198,6 @@ function TableOfContents({
 
 export function ActDetailPage() {
   const { actId, sectionId } = useParams<{ actId: string; sectionId?: string }>();
-  const location = useLocation();
   const [tocOpen, setTocOpen] = useState(false);
 
   const { data: act, isLoading: isLoadingAct } = useAct(actId!);
